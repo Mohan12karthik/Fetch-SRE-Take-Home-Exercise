@@ -27,7 +27,7 @@ def check_health(endpoint):
 
     try:
         start_time = time.time()
-        response = requests.request(method, url, headers=headers, json=body, timeout=5)
+        response = requests.request(method, url, headers=headers, json=body, timeout=1)
         response_time = (time.time() - start_time) * 1000
         
         if 200 <= response.status_code < 300 and response_time <= 500:
